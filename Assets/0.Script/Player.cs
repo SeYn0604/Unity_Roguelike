@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Speed = 3f + (GameDataMng.Instance.userSpeed/10);
-        HP = MaxHP = 100 + GameDataMng.Instance.userHp;
+        Speed = 3f; // + (GameDataMng.Instance.userSpeed/10);
+        HP = MaxHP = 100; // + GameDataMng.Instance.userHp;
         //shieldSpeed = 10;
         //BulletFireDelayTime = 2f;
     }
@@ -120,8 +120,8 @@ public class Player : MonoBehaviour
             Bullet bullet = collision.GetComponent<Bullet>();
             if (bullet != null)
             {
-                Hit(10); // 플레이어에게 10의 데미지를 입힙니다.
-                Destroy(collision.gameObject); // 총알을 제거합니다.
+                Hit(10); 
+                Destroy(collision.gameObject); 
             }
         }
         else if (collision.tag == "Mag"|| collision.tag == "Exp")
